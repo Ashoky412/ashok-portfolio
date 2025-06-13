@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ashok Pindiboyina - Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #2c2f48;
+      color: #fff;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+</style>
+<script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+    }
+    window.onload = function() {
+      showSection('hello');
+    }
+    function validateForm() {
+      const email = document.getElementById('email').value;
+      const mobile = document.getElementById('mobile').value;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const mobilePattern = /^[6-9]\d{9}$/;
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        return false;
+      }
+      if (!mobilePattern.test(mobile)) {
+        alert('Please enter a valid 10-digit mobile number starting with 6-9.');
+        return false;
+      }
+      document.getElementById('download-link').style.display = 'block';
+      return false; // prevent form submission for demo
+    }
+</script>
+</head>
+<body>
+<header>
+<img src="https://via.placeholder.com/120" alt="Ashok Pindiboyina">
+<h1>Ashok Pindiboyina</h1>
+<p>Site Reliability Engineer | DevOps Specialist | 8+ Years Experience</p>
+</header>
+<nav>
+<a onclick="showSection('hello')">Home</a>
+<a onclick="showSection('work')">Work</a>
+<a onclick="showSection('about')">About</a>
+<a onclick="showSection('contact')">Contact</a>
+<a onclick="showSection('resume')">Resume</a>
+</nav>
+<section id="hello" class="active">
+<h2>Hello</h2>
+<p>Hi, I’m Ashok Pindiboyina, a Site Reliability Engineer with over 8 years of experience. I specialize in ensuring seamless operations, optimizing infrastructure, and enhancing system reliability. Welcome to my portfolio!</p>
+</section>
+<section id="work">
+<h2>Work</h2>
+<div class="work-list">
+<p>- <strong>Cloud Platforms:</strong> AWS, Azure</p>
+<p>- <strong>Programming:</strong> Python, Shell Scripting</p>
+<p>- <strong>Configuration Management:</strong> Ansible, Terraform</p>
+<p>- <strong>Operating Systems:</strong> Linux</p>
+<p>- <strong>Monitoring & Observability:</strong> Grafana, Prometheus, New Relic, Site24x7</p>
+<p>- <strong>Version Control:</strong> Git, GitHub</p>
+<p>- <strong>CI/CD Tools:</strong> Jenkins</p>
+<p>- <strong>Containerization:</strong> Docker, Kubernetes</p>
+<p>- <strong>Databases:</strong> SQL, MySQL, MongoDB</p>
+</div>
+</section>
+<section id="about">
+<h2>About</h2>
+<p>I am based in Tirupati, Andhra Pradesh, India. My interests include playing cricket, photography, traveling, and reading books.</p>
+</section>
+<section id="contact">
+<h2>Contact</h2>
+<p>GitHub: <a href="https://github.com/Ashoky412" target="_blank">https://github.com/Ashoky412</a></p>
+<p>Email: ashoky412@gmail.com</p>
+</section>
+<section id="resume">
+<h2>Resume</h2>
+<form class="resume-form" onsubmit="return validateForm()">
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" required>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+<label for="mobile">Mobile:</label>
+<input type="text" id="mobile" name="mobile" required>
+<button type="submit">Submit & Show Download Link</button>
+</form>
+<div id="download-link">
+<p><a href="#" target="_blank">Download My Resume (PDF)</a></p>
+</div>
+</section>
+<footer>
+&copy; 2025 Ashok Pindiboyina | Visitors Count:<br>
+<img src="https://www.cutercounter.com/hits.php?id=hxfxofk&nd=6&style=1" border="0" alt="visitor counter">
+</footer>
+</body>
+</html>
