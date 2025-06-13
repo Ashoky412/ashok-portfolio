@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ashok Pindiboyina - Portfolio</title>
+<meta name="description" content="Ashok Pindiboyina - Site Reliability Engineer (SRE) | DevOps Specialist | Portfolio, Skills, Contact, Resume">
+<meta property="og:title" content="Ashok Pindiboyina - SRE & DevOps Portfolio">
+<meta property="og:description" content="Ashok Pindiboyina - Site Reliability Engineer with 8+ years experience. View my work, skills and contact me.">
+<meta property="og:image" content="https://via.placeholder.com/120">
+<meta property="og:url" content="https://ashoky412.github.io/ashok-portfolio/">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+html, body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #2c2f48;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  padding: 40px 20px 10px 20px;
+  text-align: center;
+}
+header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #fff;
+}
+header h1 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+header p {
+  font-size: 18px;
+  color: #bbb;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+nav a {
+  background: transparent;
+  border: 1px solid #555;
+  color: #fff;
+  padding: 12px 24px;
+  margin: 0 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+nav a:hover {
+  background: #444;
+  color: #fff;
+}
+section {
+  display: none;
+  flex: 1;
+  overflow: auto;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+section.active {
+  display: block;
+}
+section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #f48fb1;
+  letter-spacing: 2px;
+  text-align: center;
+}
+section p, section a {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 10px auto;
+  display: block;
+}
+.work-list {
+  font-size: 16px;
+  color: #fff;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.work-list p {
+  margin-bottom: 10px;
+}
+.work-list strong {
+  color: #fff;
+}
+.resume-form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+.resume-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.resume-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+}
+.resume-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background: #f48fb1;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.resume-form button:hover {
+  background: #e53981;
+}
+#download-link {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1f1f1f;
+  color: #bbb;
+  text-align: center;
+  font-size: 12px;
+  padding: 12px;
+  border-top: 1px solid #444;
+  z-index: 999;
+}
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+  header h1 {
+    font-size: 28px;
+  }
+  nav {
+    bottom: 80px;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+<img src="https://via.placeholder.com/120" alt="Ashok Pindiboyina">
+<h1>Ashok Pindiboyina</h1>
+<p>Site Reliability Engineer | DevOps Specialist | 8+ Years Experience</p>
+</header>
+<nav>
+<a onclick="showSection('hello')">Home</a>
+<a onclick="showSection('work')">Work</a>
+<a onclick="showSection('about')">About</a>
+<a onclick="showSection('contact')">Contact</a>
+<a onclick="showSection('resume')">Resume</a>
+</nav>
+<section id="hello" class="active">
+<h2>Hello</h2>
+<p>Hi, I’m Ashok Pindiboyina, a Site Reliability Engineer with over 8 years of experience. I specialize in ensuring seamless operations, optimizing infrastructure, and enhancing system reliability. Welcome to my portfolio!</p>
+</section>
+<section id="work">
+<h2>Work</h2>
+<div class="work-list">
+<p>- <strong>Cloud Platforms:</strong> AWS, Azure</p>
+<p>- <strong>Programming:</strong> Python, Shell Scripting</p>
+<p>- <strong>Configuration Management:</strong> Ansible, Terraform</p>
+<p>- <strong>Operating Systems:</strong> Linux</p>
+<p>- <strong>Monitoring & Observability:</strong> Grafana, Prometheus, New Relic, Site24x7</p>
+<p>- <strong>Version Control:</strong> Git, GitHub</p>
+<p>- <strong>CI/CD Tools:</strong> Jenkins</p>
+<p>- <strong>Containerization:</strong> Docker, Kubernetes</p>
+<p>- <strong>Databases:</strong> SQL, MySQL, MongoDB</p>
+</div>
+</section>
+<section id="about">
+<h2>About</h2>
+<p>I am based in Tirupati, Andhra Pradesh, India. My interests include playing cricket, photography, traveling, and reading books.</p>
+</section>
+<section id="contact">
+<h2>Contact</h2>
+<p>GitHub: <a href="https://github.com/Ashoky412" target="_blank">https://github.com/Ashoky412</a></p>
+<p>Email: ashoky412@gmail.com</p>
+</section>
+<section id="resume">
+<h2>Resume</h2>
+<form class="resume-form" onsubmit="return validateForm()">
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" required>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+<label for="mobile">Mobile:</label>
+<input type="text" id="mobile" name="mobile" required>
+<button type="submit">Submit & Show Download Link</button>
+</form>
+<div id="download-link">
+<p><a href="#" target="_blank">Download My Resume (PDF)</a></p>
+</div>
+</section>
+<footer>
+&copy; 2025 Ashok Pindiboyina | Visitors Count:<br>
+<img src="https://www.cutercounter.com/hits.php?id=hxfxofk&nd=6&style=1" border="0" alt="visitor counter">
+</footer>
+<script>
+function showSection(sectionId) {
+  const sections = document.querySelectorAll('section');
+  sections.forEach(section => {
+    section.classList.remove('active');
+  });
+  document.getElementById(sectionId).classList.add('active');
+}
+window.onload = function() {
+  showSection('hello');
+}
+function validateForm() {
+  const email = document.getElementById('email').value;
+  const mobile = document.getElementById('mobile').value;
+  const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+  const mobilePattern = /^[6-9]\\d{9}$/;
+  if (!emailPattern.test(email)) {
+    alert('Please enter a valid email address.');
+    return false;
+  }
+  if (!mobilePattern.test(mobile)) {
+    alert('Please enter a valid 10-digit mobile number starting with 6-9.');
+    return false;
+  }
+  document.getElementById('download-link').style.display = 'block';
+  return false; // prevent form submission for demo
+}
+</script>
+</body>
+</html>
