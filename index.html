@@ -47,14 +47,14 @@ nav {
   display: flex;
   justify-content: center;
   position: fixed;
-  bottom: 60px;
+  bottom: 100px;
   left: 0;
   right: 0;
   z-index: 1000;
 }
 nav a {
-  background: transparent;
-  border: 1px solid #555;
+  background: rgba(255, 255, 255, 0.05); /* light transparent bg */
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   padding: 12px 24px;
   margin: 0 10px;
@@ -67,7 +67,7 @@ nav a {
   cursor: pointer;
 }
 nav a:hover {
-  background: #444;
+  background: rgba(255, 255, 255, 0.15); /* slightly brighter on hover */
   color: #fff;
 }
 section {
