@@ -102,7 +102,7 @@
       const email = document.getElementById('email').value.trim();
       const mobile = document.getElementById('mobile').value.trim();
 
-      const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const mobilePattern = /^[6-9]\\d{9}$/;
 
       if (!emailPattern.test(email)) {
