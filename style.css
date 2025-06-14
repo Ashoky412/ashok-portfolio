@@ -1,4 +1,3 @@
-
 html, body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -8,11 +7,17 @@ html, body {
   min-height: 100vh;
   overflow-y: auto;
 }
+
 main {
   padding: 20px;
-  padding-bottom: 240px;
+  padding-bottom: 240px; /* enough space for nav + footer */
   box-sizing: border-box;
 }
+
+main section:first-child h2 {
+  margin-top: 0;
+}
+
 header {
   padding: 30px 20px 10px;
   text-align: center;
@@ -32,60 +37,126 @@ header h1 {
 header p {
   font-size: 16px;
   color: #bbb;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
+
+nav {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+nav a {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
 section {
   display: none;
+  padding: 40px 20px 80px;
+  margin: 0 auto;
+  max-width: 800px;
+  box-sizing: border-box;
 }
 section.active {
   display: block;
 }
 section h2 {
-  text-align: center;
-  color: #f48fb1;
-  margin: 10px 0;
-}
-section p {
-  font-size: 16px;
-  text-align: center;
-  line-height: 1.6;
+  margin-top: 10px;
+  font-size: 28px;
   margin-bottom: 20px;
+  color: #f48fb1;
+  letter-spacing: 2px;
+  text-align: center;
 }
-nav {
-  position: fixed;
-  bottom: 60px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  z-index: 1000;
+section p,
+section a {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 10px;
+  display: block;
 }
-nav a {
-  padding: 10px 18px;
-  border: 1px solid #555;
-  background: rgba(255,255,255,0.05);
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 14px;
+
+.work-list {
+  font-size: 16px;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
 }
-nav a:hover {
-  background: rgba(255,255,255,0.2);
+
+.resume-form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
 }
+.resume-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.resume-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+}
+.resume-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background: #f48fb1;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.resume-form button:hover {
+  background: #e53981;
+}
+
+#download-link {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
 footer {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
   background: #1f1f1f;
-  color: #ccc;
+  color: #bbb;
   text-align: center;
-  font-size: 12px;
   padding: 4px 0;
+  font-size: 11px;
+  border-top: 1px solid #444;
   z-index: 999;
   line-height: 1.2;
 }
+
 .social-icons {
   display: flex;
   justify-content: center;
@@ -96,7 +167,41 @@ footer {
   color: #f48fb1;
   font-size: 24px;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 .social-icons a:hover {
-  color: white;
+  color: #ffffff;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  header img {
+    width: 100px;
+    height: 100px;
+  }
+  header h1 {
+    font-size: 24px;
+  }
+  header p {
+    font-size: 14px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    bottom: 100px;
+  }
+  nav a {
+    font-size: 16px;
+    width: 90%;
+    margin: 4px auto;
+    text-align: center;
+  }
+
+  section h2 {
+    font-size: 22px;
+  }
+  section p {
+    font-size: 14px;
+  }
 }
