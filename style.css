@@ -11,8 +11,12 @@ html, body {
 /* Optional if you're using <main> */
 main {
   padding: 20px;
-  padding-bottom: 140px;
+  padding-bottom: 200px;
   box-sizing: border-box;
+}
+
+main section:first-child h2 {
+  margin-top: 0;
 }
 
 header {
@@ -32,6 +36,7 @@ header h1 {
   margin: 0;
 }
 header p {
+  margin-bottom: 10px; /* reduce spacing below description */
   font-size: 16px;
   color: #bbb;
 }
@@ -75,6 +80,7 @@ section.active {
   display: block;
 }
 section h2 {
+  margin-top: 10px; /* reduce default heading top space */
   font-size: 28px;
   margin-bottom: 20px;
   color: #f48fb1;
