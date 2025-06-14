@@ -67,8 +67,8 @@
       </div>
     </section>
   </main>
-
-  <nav>
+  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+  <nav class="main-nav">
     <a onclick="showSection('hello')">Home</a>
     <a onclick="showSection('work')">Work</a>
     <a onclick="showSection('about')">About</a>
@@ -79,7 +79,8 @@
   <footer>
     &copy; 2025 Ashok Pindiboyina | Visitors Count:<br>
     <a href="https://www.hitwebcounter.com" target="_blank">
-    <img src="https://hitwebcounter.com/counter/counter.php?page=20912391&style=0010&nbdigits=3&type=page&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>   
+      <img src="https://hitwebcounter.com/counter/counter.php?page=1234567&style=0006&nbdigits=6&type=page&initCount=0" alt="Web Counter">
+    </a>
   </footer>
 
   <script>
@@ -94,7 +95,9 @@
     window.onload = function() {
       showSection('hello');
     }
-
+    function toggleMenu() {
+      document.querySelector('.main-nav').classList.toggle('open');
+    }
     function validateForm() {
       const email = document.getElementById('email').value;
       const mobile = document.getElementById('mobile').value;
