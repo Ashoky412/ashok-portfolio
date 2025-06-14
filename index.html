@@ -97,7 +97,44 @@
     }
 
     window.onload = () => showSection('hello');
-    function validateForm() {
+    async function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mobile = document.getElementById('mobile').value.trim();
+
+      const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+      const mobilePattern = /^[6-9]\\d{9}$/;
+
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        return false;
+      }
+
+      if (!mobilePattern.test(mobile)) {
+        alert('Please enter a valid 10-digit mobile number starting with 6-9.');
+        return false;
+      }
+
+      const response = await fetch("https://dsolgtarvlbqbizietqy.supabase.co/rest/v1/resume_submissions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRzb2xndGFydmxicWJpemlldHF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk5MDQ5NzQsImV4cCI6MjA2NTQ4MDk3NH0.H-yI8ttyBg5qQb7-07lmQTK4ufCf95LZr5uKUYBGNQs",
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRzb2xndGFydmxicWJpemlldHF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk5MDQ5NzQsImV4cCI6MjA2NTQ4MDk3NH0.H-yI8ttyBg5qQb7-07lmQTK4ufCf95LZr5uKUYBGNQs"
+        },
+        body: JSON.stringify({ name, email, mobile })
+      });
+
+      if (response.ok) {
+        document.getElementById('download-link').style.display = 'block';
+        return false;
+      } else {
+        alert('❌ Submission failed. Please try again.');
+        return false;
+      }
+    }
+
+    /*function validateForm() {
       const email = document.getElementById('email').value;
       const mobile = document.getElementById('mobile').value;
       const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
@@ -115,7 +152,7 @@
 
       document.getElementById('download-link').style.display = 'block';
       return false; // prevent form submission
-    }
+    } */
   </script>
 </body>
 </html>
