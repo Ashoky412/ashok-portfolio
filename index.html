@@ -79,25 +79,24 @@
   <footer>
     &copy; 2025 Ashok Pindiboyina | Visitors Count:<br>
     <a href="https://www.hitwebcounter.com" target="_blank">
-      <img src="https://hitwebcounter.com/counter/counter.php?page=1234567&style=0006&nbdigits=6&type=page&initCount=0" alt="Web Counter">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=20912924&style=0010&nbdigits=5&type=page&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" />
     </a>
   </footer>
 
   <script>
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('main section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(sectionId).classList.add('active');
+    function showSection(id) {
+      document.querySelectorAll("main section").forEach(s => s.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+
+    // Auto-close menu on mobile after selection
+      document.querySelector('.main-nav')?.classList.remove('open');
     }
 
-    window.onload = function() {
-      showSection('hello');
-    }
     function toggleMenu() {
-      document.querySelector('.main-nav').classList.toggle('open');
+      document.querySelector('.main-nav')?.classList.toggle('open');
     }
+
+    window.onload = () => showSection('hello');
     function validateForm() {
       const email = document.getElementById('email').value;
       const mobile = document.getElementById('mobile').value;
