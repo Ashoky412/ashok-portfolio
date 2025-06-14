@@ -151,8 +151,8 @@ footer {
   background: #1f1f1f;
   color: #bbb;
   text-align: center;
-  font-size: 12px;
-  padding: 12px;
+  padding: 4px 0;
+  font-size: 11px;
   border-top: 1px solid #444;
   z-index: 999;
 }
