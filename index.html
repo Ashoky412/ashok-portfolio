@@ -53,7 +53,7 @@
 
     <section id="resume">
       <h2>Resume</h2>
-      <form class="resume-form" onsubmit="return validateForm()">
+      <form class="resume-form" onsubmit="return validateForm(event)">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         <label for="email">Email:</label>
@@ -97,7 +97,8 @@
     }
 
     window.onload = () => showSection('hello');
-    async function validateForm() {
+    async function validateForm(event) {
+      event.preventDefault(); // 🛑 Prevent page reload/switch
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const mobile = document.getElementById('mobile').value.trim();
