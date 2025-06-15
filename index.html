@@ -128,11 +128,11 @@
 
       if (response.ok) {
         document.getElementById('download-link').style.display = 'block';
-        return false;
+        document.getElementById('resume-form').reset();
       } else {
         alert('❌ Submission failed. Please try again.');
-        return false;
       }
+      return false;
     }
 
     /*function validateForm() {
